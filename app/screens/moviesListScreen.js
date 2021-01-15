@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     appTitle: {
         fontSize: 40,
         fontWeight: "bold",
-        top: 10
+        top: 15
     }
 })
 

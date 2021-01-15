@@ -1,27 +1,26 @@
 import React, { Component } from "react";
-import {
-  StyleSheet,
-  Dimensions,
-  Text,
-  View,
-  Image,
-  SafeAreaView,
-  Alert,
-  Button,
-  Platform,
-  StatusBar,
-  ImageBackground,
-} from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 
 class MovieEntry extends Component {
-  state = {};
+  state = {
+    starsFive: require("../assets/stars5.png"),
+    starsFour: require("../assets/stars4.png"),
+    starsThree: require("../assets/stars3.png"),
+  };
+
+  getStarsImage = (numStars) => {
+    if (numStars >= 5) return this.state.starsFive;
+    else if (numStars == 4) return this.state.starsFour;
+    else if (numStars <= 3) return this.state.starsThree;
+  };
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.movieText}>{this.props.title}</Text>
         <Image
           resizeMode="contain"
-          source={require("../assets/stars.png")}
+          source={this.getStarsImage(this.props.stars)}
           style={styles.stars}
         />
         <Text style={styles.dateText}>{this.props.date}</Text>
@@ -55,7 +54,7 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
   },
   stars: {
-    height: "40%",
+    height: 40,
     width: 100,
     left: 10,
   },
