@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet, View, Text } from 'react-native';
+import { ScrollView, StyleSheet, View, Text, Platform } from 'react-native';
 import MovieEntryList from '../components/movieEntryList';
 
 function MoviesListScreen(props) {
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
 
     titleBox: {
         width: "100%",
-        height: "10%",
+        height: "13%",
         backgroundColor: "#1fa5ff",
         flexDirection: "column",
         alignItems: "center",
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     appTitle: {
         fontSize: 40,
         fontWeight: "bold",
-        top: 15
+        top: Platform.OS === "android" ? 30 : 50
     }
 })
 

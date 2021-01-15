@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./app/assets/favicon.png"
-    }
+    },
+    "description": "A simple application which shows a list of movies with a star rating and their release date",
+    "githubUrl": "https://github.com/luis-chamorro/HackAThing1.git"
   }
 }
